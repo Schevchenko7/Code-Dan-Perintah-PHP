@@ -1,0 +1,24 @@
+Code dan perintah PHP :
+
+1. untuk perintah membuat file HomeController.php : php artisan make:controller HomeController
+
+2. untuk code yang ada di dalam class HomeController extends Controller :
+
+    public function index()
+    {
+        return view('home'); //Untuk Menampilkan Home
+    }
+
+
+3. untuk code di web.php, tambahkan ini di line 7 atau 8:
+
+    use App\Http\Controllers\HomeController;
+
+	lalu tambahkan code ini di bawah  : 
+
+    Route::get('home', [HomeController::class, 'index'])->name('home');
+
+
+4. untuk contoh kode di dalam home.blade.php bagian "href" atau "src": href="{{ asset('path/menuju/file/css atau js') }}" .  CATATAN: untuk path tidak perlu memasukan kata "public", cukup langsung ke nama folder yang berisi style css atau script js. contohnya: href="{{ asset('assets/css/style.css') }}" .
+
+5. untuk perintah menjalankan projek laravel: php artisan serve
